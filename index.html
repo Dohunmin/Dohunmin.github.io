@@ -1,71 +1,419 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>도훈민 포트폴리오</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunmin Do</title>
   <style>
+    :root {
+      --maxw: 920px;
+      --text: #111;
+      --muted: #555;
+      --link: #0969da;
+      --border: #e5e7eb;
+    }
     body {
-      font-family: sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
-      padding: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+      padding: 40px 18px;
+      background: #fff;
     }
-    .profile {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      width: 350px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
     }
-    img {
-      width: 120px;
-      border-radius: 50%;
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 26px 0;
     }
-    h1 {
-      margin: 10px 0;
+
+    /* Header */
+    .header { text-align: center; }
+    .name {
+      font-size: 2.6rem;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.02em;
     }
-    .section {
-      margin-top: 40px;
+    .photo-wrap {
+      width: 160px;
+      margin: 12px auto 12px auto;
+      border-radius: 14px;      /* rounded square */
+      overflow: hidden;
     }
-    .tech-list {
+    .photo {
+      width: 160px;
+      display: block;
+    }
+    .tagline {
+      font-weight: 600;
+      margin: 10px 0 4px 0;
+    }
+    .meta {
+      margin: 0 0 10px 0;
+      color: var(--muted);
+    }
+    .links {
+      margin-top: 8px;
+      font-size: 0.98rem;
+    }
+    .links a { margin: 0 6px; }
+
+    /* Sections */
+    h2 {
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin: 16px 0 6px 0;
+    }
+    .lead { margin: 0 0 10px 0; }
+    ul { margin: 8px 0 0 20px; }
+    li { margin: 6px 0; }
+
+    /* Details */
+    details {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 14px 0;
+      background: #fff;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
       list-style: none;
-      padding: 0;
+      outline: none;
     }
-    .tech-list li {
-      margin: 5px 0;
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 8px;
+      transform: translateY(-1px);
+      color: var(--muted);
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
+    details[open] summary::before { content: "▾"; }
+    .section-body { margin-top: 12px; }
+
+    /* Small helpers */
+    .subtle { color: var(--muted); }
+    .pillline { margin: 0; }
+    .center { text-align: center; }
+    .cv-link { font-size: 1.05rem; font-weight: 600; }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-  <div class="profile">
-    <img src="https://drive.google.com/uc?export=view&id=1iBEDr6Ix8U7DmqC6uSQEqoTokrApDCpQ" alt="프로필 사진" />
-    <h1>도훈민</h1>
-    <p>기계공학부 · HCI/HRI 연구 중</p>
-    <p>🎓 서비스 디자인 대학원 진학 예정</p>
-    <p>📫 <a href="mailto:gnsals9262@gmail.com">gnsals9262@gmail.com</a></p>
-  </div>
+    <!-- =========================
+         Hunmin Do | Academic CV
+         GitHub Pages Website
+         ========================= -->
 
-  <div class="section">
-    <h2>📄 이력서</h2>
-    <a href="https://example.com/resume.pdf" target="_blank">이력서 다운로드</a>
-  </div>
+    <div class="header">
+      <h1 class="name">Hunmin Do</h1>
 
-  <div class="section">
-    <h2>🛠 기술 스택</h2>
-    <ul class="tech-list">
-      <li>Python</li>
-      <li>SPSS Statics/ANCOVA</li>
-      <li>Figma</li>
-      <li>MidJourney
-      <li>HCI / HRI 실험 설계</li>
+      <div class="photo-wrap">
+        <img class="photo" src="assets/profile.jpg" alt="Hunmin Do profile photo" />
+      </div>
+
+      <p class="tagline">
+        M.Sc. student at the
+        <a href="https://sites.google.com/view/dxlab/intro?authuser=0" target="_blank" rel="noreferrer noopener">
+          Data eXperience Lab
+        </a>
+      </p>
+
+      <p class="meta">Sungkyunkwan University (SKKU) · Seoul, South Korea</p>
+
+      <p class="links">
+        <a href="mailto:gnsals9262@gmail.com">Email</a> ·
+        <a href="https://www.linkedin.com/in/hunmin-do-5b7bb3338" target="_blank" rel="noreferrer noopener">LinkedIn</a> ·
+        <a href="https://github.com/Dohunmin" target="_blank" rel="noreferrer noopener">GitHub</a>
+      </p>
+    </div>
+
+    <hr />
+
+    <h2>About</h2>
+    <p class="lead">
+      Hi 🙌🏻 I'm an M.Sc. student in the Department of Immersive Media Engineering at Sungkyunkwan University and a member of the
+      <a href="https://sites.google.com/view/dxlab/intro?authuser=0" target="_blank" rel="noreferrer noopener">Data eXperience Lab</a>,
+      advised by
+      <a href="https://sites.google.com/view/dxlab/members/eunil-park-ph-d?authuser=0" target="_blank" rel="noreferrer noopener">Eunil Park</a>.
+    </p>
+
+    <p class="lead">
+      My research interests lie in <strong>Human–Computer Interaction (HCI)</strong>, <strong>User Experience (UX)</strong>, and <strong>Agentic AI systems</strong>.
+      I focus on AI-driven interaction systems and data-informed UX research, with applications in <strong>digital health</strong>,
+      <strong>Human–Robot Interaction</strong>, and <strong>intelligent agents</strong>.
+    </p>
+
+    <h3>Research Interests</h3>
+    <ul>
+      <li>Human–Computer / Human–Robot Interaction</li>
+      <li>User Experience &amp; Service Design</li>
+      <li>Agentic AI &amp; Multi-persona Systems</li>
+      <li>Digital Health &amp; Wearable-based AI</li>
     </ul>
-  </div>
 
+    <hr />
+
+    <details>
+      <summary>Research Experience</summary>
+      <div class="section-body">
+
+        <p class="pillline">
+          <strong>Data eXperience Lab (DXLab), Sungkyunkwan University</strong><br />
+          <em>M.Sc. Student Researcher</em><br />
+          <span class="subtle">Jan 2026 – Present</span>
+        </p>
+
+        <hr />
+
+        <p class="pillline">
+          <strong>Smardi Lab, Sungkyunkwan University</strong><br />
+          School of Mechanical Engineering<br />
+          <em>Undergraduate Student Researcher</em><br />
+          <span class="subtle">Suwon, South Korea · Dec 2024 – Oct 2025</span>
+        </p>
+        <ul>
+          <li>Assisted in service design research under the supervision of <strong>Prof. Jaeboong Choi</strong>, focusing on data-driven digital persona development, user interview coding, and statistical analysis using SPSS.</li>
+          <li>Research domains include Service Design Process, User Experience, and Human–Computer Interaction (HCI).</li>
+          <li>Completed relevant coursework:
+            <ul>
+              <li>A New Human, Phono Sapiens</li>
+              <li>Experience Design</li>
+              <li>Product-Service Convergence Design</li>
+              <li>User Experience Capstone Design</li>
+              <li>Introduction to Artificial Intelligence</li>
+              <li>Convergence Capstone Experience Design</li>
+            </ul>
+          </li>
+        </ul>
+
+        <br />
+
+        <p class="pillline">
+          <strong>Rise Lab, Sungkyunkwan University</strong><br />
+          School of Mechanical Engineering<br />
+          <em>Undergraduate Research Program Researcher</em><br />
+          <span class="subtle">Suwon, South Korea · Jun 2024 – Aug 2024</span>
+        </p>
+        <ul>
+          <li>Conducted research on obstacle prediction algorithms under the supervision of <strong>Prof. Hyungpil Moon</strong>.</li>
+          <li>Utilized Kalman Filter (KF) and Extended Kalman Filter (EKF).</li>
+          <li>Implemented real-time obstacle detection via sensor fusion and probabilistic motion modeling.</li>
+          <li>Used the CARLA autonomous driving simulator with ROS2 on Ubuntu.</li>
+        </ul>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>Education</summary>
+      <div class="section-body">
+
+        <p class="pillline">
+          <strong>Sungkyunkwan University (SKKU)</strong><br />
+          B.S. in Mechanical Engineering<br />
+          GPA: 4.04 / 4.5 (Major GPA: 3.98 / 4.5)<br />
+          <span class="subtle">Mar 2021 – Expected Aug 2026</span>
+        </p>
+
+        <br />
+
+        <p class="pillline">
+          <strong>Korea National Institute for Lifelong Education Credit Bank</strong><br />
+          Bachelor of Business Administration<br />
+          GPA: 3.04 / 4.5<br />
+          <span class="subtle">Mar 2019 – Feb 2021</span>
+        </p>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>Publications</summary>
+      <div class="section-body">
+
+        <p><strong>International Journal</strong></p>
+        <ul>
+          <li>
+            Oh H., <strong>Do H.</strong>, et al.<br />
+            <em>Panic Attack Prediction for Patients With Panic Disorder via Machine Learning and Wearable ECG Monitoring.</em><br />
+            Journal of Medical Internet Research (JMIR), 2025. (Q1, IF 7.5) · DOI: 10.2196/69045
+          </li>
+        </ul>
+
+        <br />
+
+        <p><strong>Domestic Journals</strong></p>
+        <ul>
+          <li>
+            Do, H.-M., et al.<br />
+            <em>Wearable ECG-Based Multimodal Panic Attack Prediction Model.</em><br />
+            Journal of the Korea Institute of Information and Communication Engineering, 2025.
+          </li>
+          <li>
+            Do, H.-M., Lee, Y.-J.<br />
+            <em>The Impact of AI Agents’ Use of Address/Reference Terms on Perceived Anthropomorphism and User Experience.</em><br />
+            Journal of Digital Contents Society, 2025.
+          </li>
+        </ul>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>Conferences</summary>
+      <div class="section-body">
+        <ul>
+          <li>
+            <strong>[Accepted | Full Paper]</strong><br />
+            Lee, Y., <strong>Do, H.</strong><br />
+            <em>Design for Deletion: Enhancing Cognitive Fluency in Digital Hoarding Contexts.</em><br />
+            HCI International 2026, Springer.
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Projects</summary>
+      <div class="section-body">
+
+        <p><strong>TourGenie</strong><br />
+          Formally Verified Agentic Workflow for Personalized Travel Planning <span class="subtle">(Sep 2025 – Present)</span>
+        </p>
+        <ul>
+          <li>Developing an Agentic AI travel-planning workflow and reviewing benchmark datasets (TravelPlanner, TripCraft).</li>
+          <li>Surveying recent Agentic AI literature to define evaluation criteria and shape a unified workflow framework.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>Job Matching Platform Feature Proposal (KOSME)</strong> <span class="subtle">(Aug 2025 – Oct 2025)</span></p>
+        <ul>
+          <li>Led full UX process including user research, IA, prototyping, and usability testing.</li>
+          <li>Designed transparent recommendation logic and apply-tracking tools based on qualitative interviews and JTBD analysis.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>Generative Engine Optimization (GEO), Maeil Business Newspaper</strong> <span class="subtle">(May 2025 – Present)</span></p>
+        <ul>
+          <li>Leading a project to enhance article structure for increased citation and visibility in GenAI models (GPT-4o).</li>
+          <li>Analyzing AI citation behavior via prompt-based audits and LLM interaction logs.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>Special Purpose Tourism Analysis, Korea Tourism Organization (KTO)</strong> <span class="subtle">(Jan 2025 – Jul 2025)</span></p>
+        <ul>
+          <li>Segmented tourist types (medical, influencer, etc.) using Social Network Analysis (SNA).</li>
+          <li>Analyzed roaming-based behavioral patterns to inform patient-specific design strategy.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>Industry-Academia Project – Home Appliance Robot “Ballie”, Samsung Electronics</strong> <span class="subtle">(Mar 2025 – Jun 2025)</span></p>
+        <ul>
+          <li>Developed AI home robot scenarios (observe–record–suggest) for solo-living MZ generation.</li>
+          <li>Created value-driven personas and service features including emotion check-ins and wellness reminders.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>UX Project – Inpatient Recovery Support Service, Samsung Medical Center</strong> <span class="subtle">(Sep 2024 – Dec 2024)</span></p>
+        <ul>
+          <li>Designed a mobile app (Haeboa) for personalized micro-task rehabilitation and wishlist-based goal tracking.</li>
+          <li>Developed IA, wireframes, and UI/UX prototypes for medical stakeholders.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>Panic Attack Diagnosis Using Wearable ECG Monitoring, SKKU</strong> <span class="subtle">(Sep 2024 – Jan 2025)</span></p>
+        <ul>
+          <li>Formulated a custom fusion formula combining wearable ECG signals with self-reported panic scores (PDSS, APPQ).</li>
+          <li>Designed a mobile app UI/UX prototype to visualize personalized risk scores in real time.</li>
+        </ul>
+
+        <br />
+
+        <p><strong>AI-Based Earthquake Damage Prediction, KOICA</strong> <span class="subtle">(Mar 2024 – Jul 2025)</span></p>
+        <ul>
+          <li>Proposed an AI-driven disaster response system using Kyrgyzstan's seismic data to support early warning.</li>
+          <li>Outlined a 5-year implementation plan including data collection infrastructure and policy linkage.</li>
+        </ul>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>Patents</summary>
+      <div class="section-body">
+        <ul>
+          <li>
+            <strong>APPARATUS FOR CLEANING IRON CHIPS</strong><br />
+            KR Patent Application No. 2018-0006933
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Awards &amp; Scholarships</summary>
+      <div class="section-body">
+        <ul>
+          <li>DB GAPS Investment Competition – Excellence Award (Top 3 / 840 teams), 2025</li>
+          <li>Peer Review Award, Sungkyunkwan University, 2025</li>
+          <li>Green Scholarship, Korea Forest Welfare Institute, 2024</li>
+          <li>Scholarship Recipient, Buan-gun Forestry Cooperative, 2024</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Skills</summary>
+      <div class="section-body">
+
+        <p><strong>Tools &amp; Software</strong><br />
+          Figma, Power BI, Python, SPSS, Gephi, Inventor, PowerPoint, Excel
+        </p>
+
+        <p><strong>Data Analysis</strong><br />
+          ANOVA, ANCOVA, Statistical Testing, Social Network Analysis (SNA)
+        </p>
+
+        <p><strong>UX / Service Design</strong><br />
+          User Interview Coding, Persona Development, Journey Mapping, Service Blueprinting, UI/UX Wireframing
+        </p>
+
+        <p><strong>Languages</strong><br />
+          Korean (Native) · English (Professional) · Japanese (Basic)
+        </p>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>CV</summary>
+      <div class="section-body center">
+        <p class="cv-link">
+          <a href="assets/Hunmin_Do_CV.pdf" target="_blank" rel="noreferrer noopener">📄 Download CV (PDF)</a>
+        </p>
+      </div>
+    </details>
+
+  </div>
 </body>
 </html>
