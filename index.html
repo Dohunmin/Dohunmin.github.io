@@ -136,10 +136,19 @@
       <p class="meta">Sungkyunkwan University (SKKU) · Seoul, South Korea</p>
 
       <p class="links">
-        <a href="mailto:gnsals9262@gmail.com">Email</a> ·
-        <a href="https://www.linkedin.com/in/hunmin-do-5b7bb3338" target="_blank" rel="noreferrer noopener">LinkedIn</a> ·
+        <span
+          style="cursor:pointer; color:#0969da;"
+          onclick="copyEmail(this)"
+          title="Click to copy email"
+        >
+          Email
+        </span>
+        ·
+        <a href="https://www.linkedin.com/in/hunmin-do-5b7bb3338" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        ·
         <a href="https://github.com/Dohunmin" target="_blank" rel="noreferrer noopener">GitHub</a>
       </p>
+
     </div>
 
     <hr />
@@ -310,7 +319,7 @@
 
         <br />
 
-        <p><strong>Generative Engine Optimization (GEO), Maeil Business Newspaper</strong> <span class="subtle">(May 2025 – Present)</span></p>
+        <p><strong>Generative Engine Optimization (GEO), Maeil Business Newspaper</strong> <span class="subtle">(May 2025 – Oct 2025)</span></p>
         <ul>
           <li>Leading a project to enhance article structure for increased citation and visibility in GenAI models (GPT-4o).</li>
           <li>Analyzing AI citation behavior via prompt-based audits and LLM interaction logs.</li>
@@ -416,6 +425,19 @@
     </details>
 
   </div>
+<script>
+  function copyEmail(el) {
+    const email = "gnsals9262@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const original = el.textContent;
+      el.textContent = "Copied!";
+      setTimeout(() => {
+        el.textContent = original;
+      }, 1200);
+    });
+  }
+</script>
 </body>
 </html>
+
 
