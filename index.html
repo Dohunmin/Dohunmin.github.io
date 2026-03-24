@@ -109,6 +109,32 @@
     .center { text-align: center; }
     .cv-link { font-size: 1.05rem; font-weight: 600; }
 
+    #sidebar {
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      width: 200px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      max-height: calc(100vh - 90px);
+      overflow-y: auto;
+      z-index: 900;
+    }
+    #sidebar ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
+    #sidebar li { margin: 6px 0; }
+    #sidebar a { color: var(--link); text-decoration: none; }
+    #sidebar a:hover { text-decoration: underline; }
+
+    #main-content { margin-left: 250px; padding-right: 20px; }
+
+    @media (max-width: 1024px) {
+      #sidebar { display: none; }
+      #main-content { margin-left: 0; }
+    }
+
     /* Language Toggle */
     .lang-btn {
       background: var(--link);
@@ -133,7 +159,23 @@
     <button id="lang-eng" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
     <button id="lang-ko" class="lang-btn" onclick="setLanguage('ko')">KOR</button>
   </div>
-  <div class="container">
+  <div id="sidebar">
+    <strong>Menu</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research-experience">Research Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#conferences">Conferences</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#patents">Patents</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </div>
+
+  <div id="main-content" class="container">
 
     <!-- =========================
          Hunmin Do | Academic CV
@@ -176,8 +218,8 @@
 
     <hr />
 
-    <h2 data-en="About" data-ko="About">About</h2>
-    <p class="lead" data-en="Hi 🙌🏻 I'm an M.Sc. student in the Department of Immersive Media Engineering at Sungkyunkwan University and a member of the Data eXperience Lab, advised by Eunil Park." data-ko="안녕하세요 🙌🏻 저는 성균관대학교 실감미디어 공학과 M.Sc. 학생이며, Data eXperience Lab의 멤버로 박은일 교수님의 지도를 받고 있습니다.">
+    <h2 id="about" data-en="About" data-ko="소개">About</h2>
+    <p class="lead" data-en="Hi 🙌🏻 I'm an M.Sc. student in the Department of Immersive Media Engineering at Sungkyunkwan University and a member of the Data eXperience Lab, advised by Eunil Park." data-ko="안녕하세요 🙌🏻 저는 성균관대학교 실감미디어 공학과 M.Sc. 학생이며, Data eXperience Lab에서 박은일 교수님의 지도를 받고 있습니다.">
       Hi 🙌🏻 I'm an M.Sc. student in the Department of Immersive Media Engineering at Sungkyunkwan University and a member of the
       <a href="https://sites.google.com/view/dxlab/intro?authuser=0" target="_blank" rel="noreferrer noopener">Data eXperience Lab</a>,
       advised by
@@ -201,7 +243,7 @@
     <hr />
 
     <details>
-      <summary data-en="Research Experience" data-ko="Research Experience">Research Experience</summary>
+      <summary id="research-experience" data-en="Research Experience" data-ko="연구 경험">Research Experience</summary>
       <div class="section-body">
 
         <p class="pillline">
@@ -222,7 +264,7 @@
         </p>
 
         <ul>  
-          <li data-en="Assisted in AI-driven User Experience research under the supervision of Prof. Joongseek Lee" data-ko="이중식 교수님의 지도하에 AI 기반 사용자 경험 연구를 지원했습니다.">
+          <li data-en="Assisted in AI-driven User Experience research under the supervision of Prof. Joongseek Lee" data-ko="이중식 교수님 지도하에 AI 기반 사용자 경험 연구를 지원했습니다.">
             Assisted in AI-driven User Experience research under the supervision of
             <strong>Prof. Joongseek Lee</strong>
           </li>
@@ -261,7 +303,7 @@
     </details>
 
     <details>
-      <summary data-en="Education" data-ko="Education">Education</summary>
+      <summary id="education" data-en="Education" data-ko="교육">Education</summary>
       <div class="section-body">
 
         <p class="pillline">
@@ -277,7 +319,7 @@
     </details>
 
     <details>
-      <summary data-en="Publications" data-ko="Publications">Publications</summary>
+      <summary id="publications" data-en="Publications" data-ko="논문">Publications</summary>
       <div class="section-body">
 
         <p data-en="International Journal" data-ko="International Journal"><strong>International Journal</strong></p>
@@ -309,7 +351,7 @@
     </details>
   
   <details>
-    <summary data-en="Conferences" data-ko="Conferences">Conferences</summary>
+    <summary id="conferences" data-en="Conferences" data-ko="컨퍼런스">Conferences</summary>
     <div class="section-body">
       <ul>
         <li data-en="[Accepted | Workshop Paper] Do, H.-M., Taejun Yoon, Ki Yong Jung MIND: Multi-Agent Inference for Negotiation Dialogue in Travel Planning. ICLR 2026 Workshop on From Human Cognition to AI Reasoning (HCAIR), 2026." data-ko="[수락됨 | 워크숍 논문] 도훈민, 윤태준, 정기용 MIND: 여행 계획에서의 다중 에이전트 협상 대화 추론. ICLR 2026 워크숍: 인간 인지에서 AI 추론으로 (HCAIR), 2026.">
@@ -323,7 +365,7 @@
   </details>
 
     <details>
-      <summary data-en="Projects" data-ko="Projects">Projects</summary>
+      <summary id="projects" data-en="Projects" data-ko="프로젝트">Projects</summary>
       <div class="section-body">
 
         <p data-en="Formally Verified Agentic Workflow for Personalized Travel Planning" data-ko="개인화된 여행 계획을 위한 에이전틱 워크플로우"><strong>TourGenie</strong><br />
@@ -386,7 +428,7 @@
     </details>
 
     <details>
-      <summary data-en="Patents" data-ko="특허">Patents</summary>
+      <summary id="patents" data-en="Patents" data-ko="특허">Patents</summary>
       <div class="section-body">
         <ul>
           <li data-en="APPARATUS FOR CLEANING IRON CHIPS KR Patent Application No. 2018-0006933" data-ko="철 부스러기 청소 장치 KR 특허 출원 제2018-0006933호">
@@ -398,7 +440,7 @@
     </details>
 
     <details>
-      <summary data-en="Awards &amp; Scholarships" data-ko="수상 및 장학금">Awards &amp; Scholarships</summary>
+      <summary id="awards" data-en="Awards & Scholarships" data-ko="수상 및 장학금">Awards & Scholarships</summary>
       <div class="section-body">
         <ul>
           <li data-en="DB GAPS Investment Competition – Excellence Award (Top 3 / 840 teams), 2025" data-ko="DB GAPS 투자 대회 – 우수상 (840팀 중 공동 3위), 2025">DB GAPS Investment Competition – Excellence Award (Top 3 / 840 teams), 2025</li>
@@ -410,7 +452,7 @@
     </details>
 
     <details>
-      <summary data-en="Skills" data-ko="Skills">Skills</summary>
+      <summary id="skills" data-en="Skills" data-ko="기술">Skills</summary>
       <div class="section-body">
 
         <p data-en="Tools &amp; Software" data-ko="Tools &amp; Software"><strong>Tools &amp; Software</strong><br />
@@ -433,7 +475,7 @@
     </details>
 
     <details>
-      <summary data-en="CV" data-ko="CV">CV</summary>
+      <summary id="cv" data-en="CV" data-ko="CV">CV</summary>
       <div class="section-body center">
         <p class="cv-link">
           <a href="assets/Hunmin_Do_CV.pdf" target="_blank" rel="noreferrer noopener" data-en="📄 Download CV (PDF)" data-ko="📄 이력서 다운로드 (PDF)">📄 Download CV (PDF)</a>
