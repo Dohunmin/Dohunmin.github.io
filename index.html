@@ -110,10 +110,7 @@
     .cv-link { font-size: 1.05rem; font-weight: 600; }
 
     /* Language Toggle */
-    #lang-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
+    .lang-btn {
       background: var(--link);
       color: white;
       border: none;
@@ -121,16 +118,21 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 0.9rem;
-      z-index: 1000;
     }
-    #lang-toggle:hover {
+    .lang-btn.active {
+      background: #0756cc;
+    }
+    .lang-btn:hover {
       background: #0756cc;
     }
   </style>
 </head>
 
 <body>
-  <button id="lang-toggle" onclick="toggleLanguage()">ENG</button>
+  <div id="lang-toggle" style="display:flex; gap:6px; position:fixed; top:10px; right:10px; z-index:1000;">
+    <button id="lang-eng" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+    <button id="lang-ko" class="lang-btn" onclick="setLanguage('ko')">KOR</button>
+  </div>
   <div class="container">
 
     <!-- =========================
@@ -139,7 +141,7 @@
          ========================= -->
 
     <div class="header">
-      <h1 class="name">Hunmin Do</h1>
+      <h1 class="name" data-en="Hunmin Do" data-ko="도훈민">Hunmin Do</h1>
 
       <div class="photo-wrap">
         <img class="photo" src="assets/profile.jpg" alt="Hunmin Do profile photo" />
@@ -443,17 +445,22 @@
 <script>
   let currentLang = 'en';
 
-  function toggleLanguage() {
-    const btn = document.getElementById('lang-toggle');
-    currentLang = currentLang === 'en' ? 'ko' : 'en';
-    btn.textContent = currentLang === 'en' ? 'ENG' : 'KOR';
-    document.documentElement.lang = currentLang;
+  function setLanguage(lang) {
+    if (lang !== 'en' && lang !== 'ko') return;
+    currentLang = lang;
+    document.documentElement.lang = lang;
 
     const elements = document.querySelectorAll('[data-en]');
     elements.forEach(el => {
-      el.textContent = el.getAttribute(`data-${currentLang}`);
+      el.textContent = el.getAttribute(`data-${lang}`);
     });
+
+    document.getElementById('lang-eng').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ko').classList.toggle('active', lang === 'ko');
   }
+
+  // 초기 상태를 확실하게 지정
+  setLanguage('en');
 
   function copyEmail(el) {
     const email = "gnsals9262@gmail.com";
