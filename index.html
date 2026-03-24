@@ -1,4 +1,3 @@
-<!-- cache-bust: 2025-12-17 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,7 @@
       margin: 0;
       padding: 40px 18px;
       background: #fff;
+      scroll-behavior: smooth;
     }
     .container {
       max-width: var(--maxw);
@@ -43,7 +43,7 @@
     .photo-wrap {
       width: 160px;
       margin: 12px auto 12px auto;
-      border-radius: 14px;      /* rounded square */
+      border-radius: 14px;
       overflow: hidden;
     }
     .photo {
@@ -69,6 +69,7 @@
       font-size: 1.6rem;
       margin: 0 0 10px 0;
       letter-spacing: -0.01em;
+      scroll-margin-top: 24px;
     }
     h3 {
       font-size: 1.1rem;
@@ -85,6 +86,7 @@
       padding: 12px 14px;
       margin: 14px 0;
       background: #fff;
+      scroll-margin-top: 24px;
     }
     summary {
       cursor: pointer;
@@ -113,8 +115,8 @@
       position: fixed;
       top: 70px;
       left: 20px;
-      width: 200px;
-      padding: 12px;
+      width: 240px;
+      padding: 14px 16px;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: #fff;
@@ -122,13 +124,17 @@
       max-height: calc(100vh - 90px);
       overflow-y: auto;
       z-index: 900;
+      font-size: 1.05rem;
     }
-    #sidebar ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
-    #sidebar li { margin: 6px 0; }
+    #sidebar strong {
+      font-size: 1.1rem;
+    }
+    #sidebar ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
+    #sidebar li { margin: 10px 0; }
     #sidebar a { color: var(--link); text-decoration: none; }
     #sidebar a:hover { text-decoration: underline; }
 
-    #main-content { margin-left: 250px; padding-right: 20px; }
+    #main-content { margin-left: 290px; padding-right: 20px; }
 
     @media (max-width: 1024px) {
       #sidebar { display: none; }
@@ -159,6 +165,7 @@
     <button id="lang-eng" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
     <button id="lang-ko" class="lang-btn" onclick="setLanguage('ko')">KOR</button>
   </div>
+
   <div id="sidebar">
     <strong>Menu</strong>
     <ul>
@@ -236,14 +243,14 @@
     <ul>
       <li data-en="Human–Computer/Robot Interaction" data-ko="인간-컴퓨터/로봇 상호작용">Human–Computer/Robot Interaction</li>
       <li data-en="User Experience &amp; Service Design" data-ko="사용자 경험 및 서비스 디자인">User Experience &amp; Service Design</li>
-      <li data-en="Agentic AI &amp; Multi-persona Systems" data-ko="에이전틱 AI 및 다중 페르소나 시스템">Agentic AI &amp; Multi-persona Systems</li>
-      <li data-en="Digital Health &amp; Wearable-based UX" data-ko="디지털 건강 및 웨어러블 기반 UX">Digital Health &amp; Wearable-based UX</li>
+      <li data-en="Agentic AI &amp; Multi-persona Systems" data-ko="에이전틱 AI 및 멀티 페르소나 시스템">Agentic AI &amp; Multi-persona Systems</li>
+      <li data-en="Digital Health &amp; Wearable-based UX" data-ko="디지털 헬스 및 웨어러블 기반 UX">Digital Health &amp; Wearable-based UX</li>
     </ul>
 
     <hr />
 
-    <details>
-      <summary id="research-experience" data-en="Research Experience" data-ko="연구 경험">Research Experience</summary>
+    <details id="research-experience">
+      <summary data-en="Research Experience" data-ko="연구 경험">Research Experience</summary>
       <div class="section-body">
 
         <p class="pillline">
@@ -252,7 +259,7 @@
           <span class="subtle" data-en="Jan 2026 – Present" data-ko="2026년 1월 – 현재">Jan 2026 – Present</span>
         </p>
 
-        <hr 
+        <hr />
 
         <br>
         
@@ -302,8 +309,8 @@
       </div>
     </details>
 
-    <details>
-      <summary id="education" data-en="Education" data-ko="교육">Education</summary>
+    <details id="education">
+      <summary data-en="Education" data-ko="교육">Education</summary>
       <div class="section-body">
 
         <p class="pillline">
@@ -318,8 +325,8 @@
       </div>
     </details>
 
-    <details>
-      <summary id="publications" data-en="Publications" data-ko="논문">Publications</summary>
+    <details id="publications">
+      <summary data-en="Publications" data-ko="논문">Publications</summary>
       <div class="section-body">
 
         <p data-en="International Journal" data-ko="International Journal"><strong>International Journal</strong></p>
@@ -350,22 +357,22 @@
       </div>
     </details>
   
-  <details>
-    <summary id="conferences" data-en="Conferences" data-ko="컨퍼런스">Conferences</summary>
-    <div class="section-body">
-      <ul>
-        <li data-en="[Accepted | Workshop Paper] Do, H.-M., Taejun Yoon, Ki Yong Jung MIND: Multi-Agent Inference for Negotiation Dialogue in Travel Planning. ICLR 2026 Workshop on From Human Cognition to AI Reasoning (HCAIR), 2026." data-ko="[수락됨 | 워크숍 논문] 도훈민, 윤태준, 정기용 MIND: 여행 계획에서의 다중 에이전트 협상 대화 추론. ICLR 2026 워크숍: 인간 인지에서 AI 추론으로 (HCAIR), 2026.">
-          <strong>[Accepted | Workshop Paper]</strong><br />
-          <strong>Do, H.-M.</strong>, Taejun Yoon, Ki Yong Jung<br />
-          <em>MIND: Multi-Agent Inference for Negotiation Dialogue in Travel Planning.</em><br />
-          ICLR 2026 Workshop on From Human Cognition to AI Reasoning (HCAIR), 2026.
-        </li>
-      </ul>
-    </div>
-  </details>
+    <details id="conferences">
+      <summary data-en="Conferences" data-ko="컨퍼런스">Conferences</summary>
+      <div class="section-body">
+        <ul>
+          <li data-en="[Accepted | Workshop Paper] Do, H.-M., Taejun Yoon, Ki Yong Jung MIND: Multi-Agent Inference for Negotiation Dialogue in Travel Planning. ICLR 2026 Workshop on From Human Cognition to AI Reasoning (HCAIR), 2026." data-ko="[수락됨 | 워크숍 논문] 도훈민, 윤태준, 정기용 MIND: 여행 계획에서의 다중 에이전트 협상 대화 추론. ICLR 2026 워크숍: 인간 인지에서 AI 추론으로 (HCAIR), 2026.">
+            <strong>[Accepted | Workshop Paper]</strong><br />
+            <strong>Do, H.-M.</strong>, Taejun Yoon, Ki Yong Jung<br />
+            <em>MIND: Multi-Agent Inference for Negotiation Dialogue in Travel Planning.</em><br />
+            ICLR 2026 Workshop on From Human Cognition to AI Reasoning (HCAIR), 2026.
+          </li>
+        </ul>
+      </div>
+    </details>
 
-    <details>
-      <summary id="projects" data-en="Projects" data-ko="프로젝트">Projects</summary>
+    <details id="projects">
+      <summary data-en="Projects" data-ko="프로젝트">Projects</summary>
       <div class="section-body">
 
         <p data-en="Formally Verified Agentic Workflow for Personalized Travel Planning" data-ko="개인화된 여행 계획을 위한 에이전틱 워크플로우"><strong>TourGenie</strong><br />
@@ -422,13 +429,13 @@
         <ul>
           <li data-en="Formulated a custom fusion formula combining wearable ECG signals with self-reported panic scores (PDSS, APPQ)." data-ko="웨어러블 ECG 신호와 자가 보고 공황 점수(PDSS, APPQ)를 결합한 공황장애 예측 솔루션 제안">Formulated a custom fusion formula combining wearable ECG signals with self-reported panic scores (PDSS, APPQ).</li>
           <li data-en="Designed a mobile app UI/UX prototype to visualize personalized risk scores in real time." data-ko="개인화된 공황장애 예측 점수를 실시간으로 시각화하는 모바일 앱 UI/UX 프로토타입 설계">Designed a mobile app UI/UX prototype to visualize personalized risk scores in real time.</li>
-
+        </ul>
 
       </div>
     </details>
 
-    <details>
-      <summary id="patents" data-en="Patents" data-ko="특허">Patents</summary>
+    <details id="patents">
+      <summary data-en="Patents" data-ko="특허">Patents</summary>
       <div class="section-body">
         <ul>
           <li data-en="APPARATUS FOR CLEANING IRON CHIPS KR Patent Application No. 2018-0006933" data-ko="철 부스러기 청소 장치 KR 특허 출원 제2018-0006933호">
@@ -439,8 +446,8 @@
       </div>
     </details>
 
-    <details>
-      <summary id="awards" data-en="Awards & Scholarships" data-ko="수상 및 장학금">Awards & Scholarships</summary>
+    <details id="awards">
+      <summary data-en="Awards & Scholarships" data-ko="수상 및 장학금">Awards & Scholarships</summary>
       <div class="section-body">
         <ul>
           <li data-en="DB GAPS Investment Competition – Excellence Award (Top 3 / 840 teams), 2025" data-ko="DB GAPS 투자 대회 – 우수상 (840팀 중 공동 3위), 2025">DB GAPS Investment Competition – Excellence Award (Top 3 / 840 teams), 2025</li>
@@ -451,8 +458,8 @@
       </div>
     </details>
 
-    <details>
-      <summary id="skills" data-en="Skills" data-ko="기술">Skills</summary>
+    <details id="skills">
+      <summary data-en="Skills" data-ko="기술">Skills</summary>
       <div class="section-body">
 
         <p data-en="Tools &amp; Software" data-ko="Tools &amp; Software"><strong>Tools &amp; Software</strong><br />
@@ -474,8 +481,8 @@
       </div>
     </details>
 
-    <details>
-      <summary id="cv" data-en="CV" data-ko="CV">CV</summary>
+    <details id="cv">
+      <summary data-en="CV" data-ko="CV">CV</summary>
       <div class="section-body center">
         <p class="cv-link">
           <a href="assets/Hunmin_Do_CV.pdf" target="_blank" rel="noreferrer noopener" data-en="📄 Download CV (PDF)" data-ko="📄 이력서 다운로드 (PDF)">📄 Download CV (PDF)</a>
@@ -484,6 +491,7 @@
     </details>
 
   </div>
+
 <script>
   let currentLang = 'en';
 
@@ -501,7 +509,6 @@
     document.getElementById('lang-ko').classList.toggle('active', lang === 'ko');
   }
 
-  // 초기 상태를 확실하게 지정
   setLanguage('en');
 
   function copyEmail(el) {
@@ -514,18 +521,24 @@
       }, 1200);
     });
   }
+
+  document.querySelectorAll('#sidebar a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      if (target.tagName.toLowerCase() === 'details') {
+        target.open = true;
+      }
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      history.replaceState(null, null, `#${targetId}`);
+    });
+  });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
